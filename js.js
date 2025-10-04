@@ -27,7 +27,15 @@ createDivs(numPerSide)
 
 
 resizeBtn.addEventListener("click", () =>{
-  numPerSide = prompt("Select size between 1-100:")
+  let numPerSide;
+  do {
+    numPerSide = prompt("Select grid size between 1-100:")
+
+    if (numPerSide === null) {
+      return
+    }
+  }
+  while (numPerSide <= 0 || numPerSide > 100 || isNaN(Number(numPerSide)) || numPerSide === "");
   createDivs(Number(numPerSide));
   addHoverListeners()
 })
