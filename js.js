@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const resizeBtn = document.querySelector(".resize")
+const clearBtn = document.querySelector(".clear")
 let numPerSide = 16;
 
 const addHoverListeners = () => {
@@ -39,6 +40,14 @@ resizeBtn.addEventListener("click", () =>{
   while (numPerSide <= 0 || numPerSide > 100 || isNaN(Number(numPerSide)) || numPerSide === "");
   createDivs(Number(numPerSide));
   addHoverListeners()
+})
+
+
+clearBtn.addEventListener("click", () => {
+  const squares = document.querySelectorAll(".square")
+  squares.forEach((square) => {
+    square.style.background = "snow"
+  })
 })
 
 addHoverListeners()
