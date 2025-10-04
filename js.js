@@ -6,7 +6,8 @@ const addHoverListeners = () => {
   const squares = document.querySelectorAll(".square")
   squares.forEach((square) => {
     square.addEventListener("mouseover", () => {
-      square.style.background = "black"
+      let i = Math.floor(Math.random() * 361)
+      square.style.background = `hsl(${i} 100% 50%)`
     })
   })
 }
